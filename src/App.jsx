@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <div className="app">
-      arbel!
+      pls pls work!
       <img src="./vite.svg" alt="vite" />
       </div>
     </>
