@@ -1,0 +1,148 @@
+.quiz-page {
+  min-height: 100vh;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  color: white;
+}
+
+.quiz-back {
+  background: rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.5);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.quiz-progress {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+}
+
+.quiz-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  gap: 20px;
+  max-width: 420px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.quiz-emoji {
+  font-size: 64px;
+}
+
+.quiz-question {
+  font-family: 'Fredoka One', cursive;
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+  line-height: 1.3;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 2.5px solid #e0e0e0;
+  background: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.1s, border-color 0.2s;
+  text-align: right;
+}
+
+.quiz-option:active { transform: scale(0.97); }
+
+.quiz-option.correct {
+  border-color: #22CC88;
+  background: #eafff5;
+  color: #22CC88;
+}
+
+.quiz-option.wrong {
+  border-color: #FF5A5A;
+  background: #fff0f0;
+  color: #FF5A5A;
+}
+
+.quiz-option.dim {
+  opacity: 0.4;
+}
+
+.quiz-option__shape {
+  font-size: 22px;
+}
+
+.quiz-finish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 16px;
+  padding: 20px;
+}
+
+.quiz-finish__emoji {
+  font-size: 80px;
+}
+
+.quiz-finish__title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 48px;
+  color: #333;
+}
+
+.quiz-finish__score {
+  font-family: 'Fredoka One', cursive;
+  font-size: 36px;
+  color: var(--quiz-color);
+}
+
+.quiz-finish__btn {
+  margin-top: 10px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+.quiz-finish__message {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #555;
+  text-align: center;
+}

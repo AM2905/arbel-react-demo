@@ -1,0 +1,142 @@
+.flip-wrap {
+  height: 220px;
+  perspective: 1000px;
+  cursor: pointer;
+  animation: cardIn 0.4s both;
+  position: relative; /* ← הוסיפי את זה */
+  direction: rtl;
+}
+.flip-wrap:nth-child(1) { animation-delay: 0.05s; }
+.flip-wrap:nth-child(2) { animation-delay: 0.15s; }
+.flip-wrap:nth-child(3) { animation-delay: 0.25s; }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  border-radius: 18px;
+}
+
+.flip-wrap.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-front {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border: 2.5px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.09);
+}
+
+.flip-front__img {
+  width: 100%;
+  height: 158px;
+  object-fit: cover;
+  display: block;
+}
+
+.flip-front__bar {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 14px;
+}
+
+.flip-front__name {
+  font-family: 'Fredoka One', cursive;
+  font-size: 17px;
+  color: #222;
+}
+
+.flip-front__hint {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 50px;
+  border: 2px solid;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.flip-back__label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.flip-back__title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  color: #fff;
+  line-height: 1;
+}
+
+.flip-back__fact {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.flip-back__tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.22);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  align-self: flex-start;
+}
+.flip-front__check {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #22CC88;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  animation: popIn 0.3s ease-out 0.6s both;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0); }
+  to   { opacity: 1; transform: scale(1); }
+}

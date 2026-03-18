@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap');
+
+.dog-page {
+  min-height: 100vh;
+  background-color: #F0F8FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dog-page__hero {
+  text-align: center;
+  padding: 28px 20px 10px;
+  width: 100%;
+}
+
+.dog-page__emoji {
+  font-size: 72px;
+  display: block;
+  margin-bottom: 8px;
+  animation: wag 1.6s ease-in-out infinite;
+}
+
+@keyframes wag {
+  0%, 100% { transform: rotate(-8deg); }
+  50%       { transform: rotate(8deg); }
+}
+
+.dog-page__title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 48px;
+  color: #0080FF;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.dog-page__sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #3DAAFF;
+  opacity: 0.7;
+}
+
+.dog-page__stripe {
+  height: 5px;
+  margin: 14px auto 0;
+  width: 80px;
+  border-radius: 99px;
+  background: #3DAAFF;
+  opacity: 0.4;
+}
+
+.dog-page__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 16px 40px;
+  width: 100%;
+  max-width: 420px;
+}
+.QuizBtn {
+  display: block;
+  margin: 0 auto 40px;
+  height: 50px;
+  width: 200px;
+  border-radius: 24px;
+  border: 2px solid white;
+  color: white;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  background: #3DAAFF;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  direction: rtl;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.08); }
+}

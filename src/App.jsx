@@ -1,49 +1,21 @@
-import { Routes, Route, Link } from "react-router-dom";
-import cat from "./assets/cat.png";
-import dog from "./assets/dog.png";
-import "./style.css";
+import { Routes, Route, Navigate } from "react-router-dom";
+import "./css/App.css";
+import CatPage from "./pages/CatPage";
+import DogPage from "./pages/DogPage";
+import QuizPage from "./pages/QuizPage";
 
-function Home() {
+export default function App() {
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>press the cat!</h1>
-
-      <Link to="/second">
-        <img
-          src={cat}
-          alt="Go to second page"
-          style={{ cursor: "pointer" }}
-          className="catBtn"
-        />
-      </Link>
+    <div className="pp-root">
+      <Routes>
+        
+        <Route path="/cats/quiz" element={<QuizPage animal="cat" />} />
+        <Route path="/dogs/quiz" element={<QuizPage animal="dog" />} />
+        <Route path="/" element={<Navigate to="/cats" replace />} />
+        <Route path="/cats" element={<CatPage />} />
+        <Route path="/dogs" element={<DogPage />} />
+       
+      </Routes>
     </div>
   );
 }
-
-function SecondPage() {
-  return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>press the dog</h1>
-      <Link to="/">
-      
-       <img
-          src={dog}
-          alt="Go to second page"
-          style={{ cursor: "pointer" }}
-          className="catBtn"
-        />
-      </Link>
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/second" element={<SecondPage />} />
-    </Routes>
-  );
-}
-
-export default App;

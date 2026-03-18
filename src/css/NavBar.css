@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.08);
+}
+
+.navbar__brand {
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 8px;
+}
+
+.navbar__link {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: 2.5px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.navbar__link--active {
+  background: rgba(255,255,255,0.35);
+  border-color: rgba(255,255,255,0.8);
+  color: #fff;
+}
+
+.navbar__link:active {
+  transform: scale(0.94);
+}
